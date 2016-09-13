@@ -2,25 +2,25 @@
 cls
 
 :question
-echo +-----------------------------------------+
-echo I Bienvenue dans le controle de connexion I
-echo +-----------------------------------------+
+echo +-----------------------------------+
+echo I Welcome in the connection control I
+echo +-----------------------------------+
 echo.
 set var=0
 echo etat = %var%
 echo.
-echo 1/Meilleure connexion (only WIFI + Admin)
-echo 2/Remettre a la normale (only WIFI + Admin)
+echo 1/Better connection (only WIFI + Admin)
+echo 2/Back to normal (only WIFI + Admin)
 echo.
 echo 3/Ping
-echo 4/Tester la vitesse
-echo 5/Info config IP
-echo 6/Mon IP en ligne
+echo 4/Speedlimit
+echo 5/Ipconfig
+echo 6/My external IP
 echo 7/Netstat
 echo.
-echo 8/Quitter
+echo 8/Exit
 echo.
-set /p choix=Que voulez vous faire : 
+set /p choix=What do you wanna do ? : 
  
 if /I "%choix%"=="1" (goto :A)
 if /I "%choix%"=="2" (goto :B)
@@ -35,14 +35,14 @@ goto question
  
 :A
 cls
-echo Premier test :
+echo First test :
 netsh int tcp set heuristics disabled
 echo.
-echo Deuxieme test :
+echo Second test :
 netsh interface tcp set global autotuning=disabled
 echo.
 echo.
-echo Connexion amelioree si OK x2
+echo Connection improved if OK x2
 pause
 cls
 
@@ -51,7 +51,7 @@ goto question
 :B
 cls
 netsh interface tcp set global autotuning=normal
-echo Connexion remise a la normale si OK
+echo Connection back to normal if OK
 pause
 cls
 
@@ -59,7 +59,7 @@ goto question
 
 :C
 cls
-echo Faites Ctrl + c pour arreter
+echo Hit Ctrl + c to stop
 pause
 ping -t google.com
 cls
@@ -68,7 +68,7 @@ goto question
 :D
 cls
 start http://www.speedtest.net/fr/
-echo Site ouvert
+echo Website opened
 pause
 cls
 goto question
@@ -83,7 +83,7 @@ goto question
 :F
 cls
 start http://www.hostip.fr/
-echo Site ouvert
+echo Website opened
 pause
 cls
 goto question
@@ -96,8 +96,8 @@ goto question
  
 :end
 cls
-echo Fin du programme
+echo End of the program
 echo.
-Echo Appuyez sur une touche pour quitter
+Echo Press any key to exit
 pause >null
 del null
