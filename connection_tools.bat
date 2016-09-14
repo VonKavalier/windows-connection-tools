@@ -91,6 +91,7 @@ goto question
 :G
 cls
 netstat -a
+pause
 cls
 goto question
  
