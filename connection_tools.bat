@@ -6,8 +6,6 @@ echo +-----------------------------------+
 echo I Welcome in the connection control I
 echo +-----------------------------------+
 echo.
-set var=0
-echo etat = %var%
 echo.
 echo 1/Better connection (only WIFI + Admin)
 echo 2/Back to normal (only WIFI + Admin)
